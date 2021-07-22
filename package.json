@@ -4,17 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint '**/*.js'",
+    "lint:fix": "prettier-eslint 'src/**/*.js' --write"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rajeshsenh/react-ui-library.git"
   },
-  "keywords": ["react", "library"],
+  "keywords": [
+    "react",
+    "library"
+  ],
   "author": "rajesh",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rajeshsenh/react-ui-library/issues"
   },
-  "homepage": "https://github.com/rajeshsenh/react-ui-library#readme"
+  "homepage": "https://github.com/rajeshsenh/react-ui-library#readme",
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier-eslint": "^12.0.0",
+    "prettier-eslint-cli": "^5.0.1"
+  }
 }
