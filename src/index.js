@@ -1,3 +1,3 @@
-import React from "react";
+import Button from './Components/Button';
 
-export const Spinner = props => <h1>Spinner</h1>;
+export { Button };

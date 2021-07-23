@@ -1,18 +1,17 @@
 import babel from "rollup-plugin-babel";
 import resolve from "rollup-plugin-node-resolve";
+
 import { terser } from 'rollup-plugin-terser';
 
 const dist = 'dist';
 const production = !process.env.ROLLUP_WATCH;
 const bundle = "bundle";
 
+const extensions = ['.mjs', '.js', '.jsx', '.json'];
+
 export default {
   input: "src/index.js",
   output: [
-    {
-      file: `${dist}/${bundle}.cjs.js`,
-      format: 'cjs'
-    },
     {
       file: `${dist}/${bundle}.esm.js`,
       format: 'esm'
@@ -21,17 +20,20 @@ export default {
       name: "react-ui-library",
       file: `${dist}/${bundle}.umd.js`,
       globals: {
-        react: 'React'
+        'react': 'React',
+        'prop-types': 'PropTypes'
       },
       format: 'umd'
     }
   ],
   plugins: [
-    resolve(),
+    resolve({ extensions }),
     babel({
-      exclude: 'node_modules/**'
+      exclude: 'node_modules/**',
+      presets: ['@babel/env', '@babel/preset-react'],
+      extensions: extensions,
     }),
     production && terser()
   ],
-  external: ['react']
+  external: ['react', "prop-types"]
 }
