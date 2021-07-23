@@ -13,6 +13,7 @@
     "prebuild": "npm run clean",
     "lint": "eslint '**/*.js'",
     "lint:fix": "prettier-eslint 'src/**/*.{js,jsx}' --write",
+    "lint-demo:fix": "prettier-eslint 'examples/**/*.{js,jsx}' --write",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "test": "jest",
