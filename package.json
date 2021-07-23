@@ -21,7 +21,8 @@
     "test:staged": "jest --findRelatedTests",
     "dev": "concurrently \"npm run start\" \"cd examples && npm run start\"",
     "predeploy": "npm run storybook:build",
-    "deploy": "gh-pages -d storybook-static"
+    "deploy": "gh-pages -d storybook-static",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -29,7 +30,10 @@
     }
   },
   "lint-staged": {
-    "*.js": ["npm run lint:fix", "git add"]
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
