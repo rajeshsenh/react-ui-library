@@ -12,7 +12,7 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "lint": "eslint '**/*.js'",
-    "lint:fix": "prettier-eslint 'src/**/*.js' --write",
+    "lint:fix": "prettier-eslint 'src/**/*.{js,jsx}' --write",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "test": "jest",
@@ -53,8 +53,13 @@
     "@babel/core": "^7.14.8",
     "@babel/preset-env": "^7.14.8",
     "@babel/preset-react": "^7.14.5",
+    "@storybook/addon-actions": "^6.3.5",
+    "@storybook/addon-essentials": "^6.3.5",
+    "@storybook/addon-links": "^6.3.5",
+    "@storybook/react": "^6.3.5",
     "babel-core": "^6.26.3",
     "babel-jest": "^27.0.6",
+    "babel-loader": "^7.1.5",
     "concurrently": "^6.2.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
@@ -86,5 +91,6 @@
     "moduleNameMapper": {
       "\\.css$": "<rootDir>/mocks/styles.js"
     }
-  }
+  },
+  "dependencies": {}
 }

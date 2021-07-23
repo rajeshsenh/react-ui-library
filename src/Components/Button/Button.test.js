@@ -5,8 +5,6 @@ import renderer from 'react-test-renderer';
 import Button from './Button';
 
 it('render correctly', () => {
-  const tree = renderer
-    .create(<Button />)
-    .toJSON()
-  expect(tree).toMatchSnapshot()
-})
+  const tree = renderer.create(<Button />).toJSON();
+  expect(tree).toMatchSnapshot();
+});
