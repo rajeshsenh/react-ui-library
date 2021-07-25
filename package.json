@@ -12,8 +12,8 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "lint": "eslint '**/*.js'",
-    "lint:fix": "prettier-eslint 'src/**/*.{js,jsx}' --write",
-    "lint-demo:fix": "prettier-eslint 'examples/**/*.{js,jsx}' --write",
+    "lint:fix": "eslint 'src/**/*.{js,jsx}' --fix",
+    "lint-demo:fix": "eslint 'examples/src/**/*.{js,jsx}' --fix",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "test": "jest",
@@ -64,14 +64,17 @@
     "concurrently": "^6.2.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gh-pages": "^3.2.3",
     "husky": "^7.0.1",
     "jest": "^27.0.6",
     "lint-staged": "^11.1.0",
+    "prettier": "^2.3.2",
     "prettier-eslint": "^12.0.0",
     "prettier-eslint-cli": "^5.0.1",
     "prop-types": "^15.7.2",
@@ -80,7 +83,8 @@
     "rollup": "^2.53.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^3.9.10"
   },
   "peerDependencies": {
     "react": ">= 16.0.0"
@@ -93,5 +97,7 @@
       "\\.css$": "<rootDir>/mocks/styles.js"
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "clsx": "^1.1.1"
+  }
 }

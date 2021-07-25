@@ -1,10 +1,10 @@
-import { expect, it } from '@jest/globals';
-import React from 'react';
-import renderer from 'react-test-renderer';
+import { expect, it } from "@jest/globals";
+import React from "react";
+import renderer from "react-test-renderer";
 
-import Button from './Button';
+import Button from "./Button";
 
-it('render correctly', () => {
+it("render correctly", () => {
   const tree = renderer.create(<Button />).toJSON();
   expect(tree).toMatchSnapshot();
 });
